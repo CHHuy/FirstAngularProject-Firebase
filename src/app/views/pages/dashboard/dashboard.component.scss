@@ -1,0 +1,36 @@
+@import "../../../../scss/core";
+.dashboard-header{
+  .navbar{
+    border-radius: 8px;
+    img{
+      height: 35px;
+    }
+  }
+  margin: 10px 0;
+  border-radius: 8px;
+  .navbar-custom{
+    @include justify-content(flex-end);
+  }
+}
+.dashboard-body{
+  .dashboard-logo{
+    text-align: center;
+    margin: 15px 0;
+    img{
+      height: 120px;
+    }
+  }
+  .form-group{
+    font-size: 16px;
+    button{
+      font-size: 16px;
+
+    }
+  }
+  .dashboard-textbox{
+
+    @include media-breakpoint-up(lg){
+      width: 50%;
+    }
+  }
+}

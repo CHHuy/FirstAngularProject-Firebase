@@ -6,12 +6,12 @@ import { PagesComponent } from '@pages/pages.component';
 
 
 const routes: Routes = [
-  {path: 'auth', loadChildren: () => import('./views/pages/auth/auth.module').then(m => m.AuthModule)},
+  // {path: 'auth', loadChildren: () => import('./views/pages/auth/auth.module').then(m => m.AuthModule)},
 
   {
     path: '',
     component: PagesComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {
         path: 'dashboard',
