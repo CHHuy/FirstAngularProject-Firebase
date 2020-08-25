@@ -1,0 +1,68 @@
+@import "../../../../scss/core";
+
+.admin-header {
+  .navbar {
+    border-radius: 8px;
+
+    img {
+      height: 35px;
+    }
+  }
+
+  margin: 10px 0;
+  border-radius: 8px;
+
+  .navbar-custom {
+    @include justify-content(flex-end);
+  }
+}
+
+.admin-body {
+  .admin-logo {
+    text-align: center;
+    margin: 15px 0;
+
+    img {
+      height: 120px;
+    }
+  }
+
+  .form-group {
+    font-size: 16px;
+
+    button {
+      font-size: 16px;
+
+    }
+  }
+
+  .admin-post-check {
+    .form-group-content{
+      height: 400px;
+      overflow-y: scroll;
+    }
+    color: #000000;
+    font-weight: bold;
+    font-size: 14px;
+    @include media-breakpoint-up(lg) {
+      width: 50%;
+    }
+    .list-group{
+      .list-group-item{
+        padding: 15px 10px;
+      }
+    }
+  }
+}
+
+.custom-control-input {
+  &:checked ~ .custom-control-label::before {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  &:checked ~ .custom-control-label::after {
+    border-color: #fff;
+  }
+}

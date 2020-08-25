@@ -1,0 +1,40 @@
+<div class="admin-header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a routerLink="dashboard">
+      <img src="assets/images/MOLI-GROUP_Red-1.png" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse navbar-custom" id="navbarNav">
+      <ul>
+        <li>
+          <button routerLink="cfs-show" class="btn btn-hidden">Tâm sự cùng nhau</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div class="admin-body">
+  <div class="admin-logo">
+    <img src="assets/images/MOLI-GROUP_Red-1.png" alt="">
+  </div>
+  <form *ngIf="!checked" [formGroup]="form" novalidate (ngSubmit)="onSubmit()"
+        [ngClass]="{'ng-was-validated-invalid': checked}" class="admin-post-check mr-auto ml-auto">
+    <div class="form-group form-group-content">
+      <ul class="list-group list-group-flush">
+        <!-- Default unchecked -->
+        <li *ngFor="let message of messages | async" class="custom-control custom-checkbox list-group-item">
+          <input type="checkbox" class="custom-control-input" id="{{message.id}}">
+          <label class="custom-control-label" for="{{message.id}}">{{message.content}}</label>
+        </li>
+      </ul>
+    </div>
+    <div class="form-group text-center">
+      <button type="button" class="btn btn-primary text-center">Duyệt tin</button>
+    </div>
+  </form>
+
+
+</div>

@@ -1,0 +1,47 @@
+<div class="cfs-header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a routerLink="dashboard">
+      <img src="assets/images/MOLI-GROUP_Red-1.png" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse navbar-custom" id="navbarNav">
+      <ul>
+        <li>
+          <a routerLink="cfs-show" class="btn btn-hidden">Tâm sự cùng nhau</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div class="cfs-body">
+  <div class="cfs-logo">
+    <img src="assets/images/MOLI-GROUP_Red-1.png" alt="">
+  </div>
+  <div class="cfs-reading mr-auto ml-auto">
+    <div class="row">
+      <div class="cfs-posted col-md-6">
+        <div class="list-group">
+          <a *ngFor="let message of messages | async" (click)="onShowMessageDetail(message)" href="#"
+             class="list-group-item list-group-item-action"
+             [ngClass]="{'active': currentMessage?.id == message.id}"
+          >
+            {{ message.content }}
+          </a>
+        </div>
+      </div>
+      <div *ngIf="currentMessage" class="cfs-answered col-md-6">
+        <h4>{{ currentMessage.content }}</h4>
+        <ul *ngIf="currentMessage.comments" class="list-unstyled">
+          <li *ngFor="let comment of currentMessage.comments" class="media">
+            <div class="media-body">
+              {{ comment }}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
