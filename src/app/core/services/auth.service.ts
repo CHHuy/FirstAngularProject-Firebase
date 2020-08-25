@@ -95,8 +95,9 @@ export class AuthService {
   emailLogin(email: string, password: string) {
     return this.auth.signInWithEmailAndPassword(email, password)
       .then((credential) => {
+        console.log('credential', credential);
         this.notify.update('Welcome to Firestarter!!!', 'success');
-        return this.updateUserData(credential.user, false); // if using firestore
+        return this.updateUserData(credential.user, true); // if using firestore
       })
       .catch((error) => this.handleError(error));
   }

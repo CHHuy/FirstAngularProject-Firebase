@@ -51,16 +51,13 @@ export class DashboardComponent implements OnInit {
     const { message } = this.form.value;
 
     try {
-      console.log(message);
       const res = await this.afs.collection('messages').add({
         content: message
       });
-      console.log('res:', res);
       if (res) {
         this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Gửi thành công' });
       }
     } catch (error) {
-      console.log(error);
       this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Gửi thất bại' });
     }
   }
@@ -70,3 +67,4 @@ export class DashboardComponent implements OnInit {
     this.form.reset();
   }
 }
+

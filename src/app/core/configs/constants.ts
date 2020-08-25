@@ -8,7 +8,7 @@ export const Constants = {
   message: {
     emptyMessage: 'No Data'
   },
-  redirectUrl: '/dashboard',
+  redirectUrl: '/admin',
   loginUrl: '/auth/login',
 
   asideMenu: [
