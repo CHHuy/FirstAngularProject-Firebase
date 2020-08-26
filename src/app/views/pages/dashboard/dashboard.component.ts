@@ -52,7 +52,8 @@ export class DashboardComponent implements OnInit {
 
     try {
       const res = await this.afs.collection('messages').add({
-        content: message
+        content: message,
+        status: false,
       });
       if (res) {
         this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Gửi thành công' });
