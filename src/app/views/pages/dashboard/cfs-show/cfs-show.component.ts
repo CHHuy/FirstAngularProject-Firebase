@@ -35,8 +35,7 @@ export class CfsShowComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.messages = this.afs.collection('messages',
-      ref => ref.orderBy('timestamp', 'desc')).valueChanges({ idField: 'id' });
+    this.messages = this.afs.collection('messages').valueChanges({ idField: 'id' });
   }
 
   async onSubmit() {

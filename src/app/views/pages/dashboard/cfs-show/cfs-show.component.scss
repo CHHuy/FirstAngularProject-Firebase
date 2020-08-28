@@ -1,39 +1,89 @@
 @import "../../../../../scss/core";
-.cfs-header{
-  .navbar{
+
+.cfs-header {
+  .navbar {
     border-radius: 8px;
-    img{
-      height: 35px;
+
+    img {
+      height: 50px;
     }
   }
+
   margin: 10px 0;
   border-radius: 8px;
-  .navbar-custom{
+
+  .navbar-custom {
     @include justify-content(flex-end);
+
+    ul {
+      list-style: none;
+      margin-bottom: 0;
+
+      li {
+
+        a {
+          font-weight: bold;
+          font-size: 13px;
+        }
+      }
+    }
   }
 }
-.cfs-body{
-  .cfs-logo{
+
+.cfs-body {
+  .cfs-logo {
     text-align: center;
     margin: 15px 0;
-    img{
+
+    img {
       height: 120px;
     }
   }
-  .form-group{
-    font-size: 16px;
-    button{
-      font-size: 16px;
 
+  .form-group {
+    font-size: 16px;
+    font-weight: bold;
+
+    button {
+      font-size: 16px;
+    }
+
+    .form-control {
+      font-size: 14px;
+      font-weight: bold;
     }
   }
-  .cfs-reading{
-    .cfs-answered, .cfs-posted{
+
+  .cfs-reading {
+    .cfs-answered, .cfs-posted {
       height: 400px;
       overflow-y: scroll;
       font-size: 14px;
       font-weight: bold;
       color: #000000;
+      @include media-breakpoint-down(xs){
+        margin-top: 15px;
+      }
+      .list-group {
+        border-radius: 8px;
+      }
+    }
+
+    .cfs-answered {
+      .message-bg {
+        border-radius: 8px;
+        background: #ffffff;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .message-header {
+        margin-bottom: 0;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 16px;
+      }
     }
   }
 }
+

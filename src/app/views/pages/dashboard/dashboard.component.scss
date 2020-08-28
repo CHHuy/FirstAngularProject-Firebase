@@ -3,13 +3,21 @@
   .navbar{
     border-radius: 8px;
     img{
-      height: 35px;
+      height: 50px;
     }
   }
   margin: 10px 0;
   border-radius: 8px;
   .navbar-custom{
     @include justify-content(flex-end);
+    ul{
+      list-style: none;
+      margin-bottom: 0;
+      a{
+        font-weight: bold;
+        font-size: 13px;
+      }
+    }
   }
 }
 .dashboard-body{
@@ -17,14 +25,18 @@
     text-align: center;
     margin: 15px 0;
     img{
-      height: 120px;
+      height: 190px;
     }
   }
   .form-group{
     font-size: 16px;
+    font-weight: bold;
     button{
       font-size: 16px;
-
+    }
+    .form-control{
+      font-size: 14px;
+      font-weight: bold;
     }
   }
   .dashboard-textbox{

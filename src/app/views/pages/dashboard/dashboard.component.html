@@ -9,14 +9,15 @@
     </button>
     <div class="collapse navbar-collapse navbar-custom" id="navbarNav">
       <ul>
-          <li><button routerLink="cfs-show" class="btn btn-hidden">Tâm sự cùng nhau</button></li>
+          <li><a routerLink="cfs-show" class="btn btn-danger">Tâm sự cùng nhau</a></li>
       </ul>
     </div>
   </nav>
 </div>
 <div class="dashboard-body">
   <div class="dashboard-logo">
-    <img src="assets/images/MOLI-GROUP_Red-1.png" alt="">
+<!--    <img src="assets/images/MOLI-GROUP_Red-1.png" alt="">-->
+    <img src="assets/images/giphy.gif" alt="">
   </div>
   <div class="dashboard-textbox mr-auto ml-auto">
     <form *ngIf="!submitted" [formGroup]="form" novalidate (ngSubmit)="onSubmit()"
@@ -31,8 +32,7 @@
         </small>
       </div>
       <div class="form-group text-center">
-        <button [disabled]="submitted || !form.valid" (click)="onSubmit()" type="button" class="btn btn-primary">Gửi
-          tin
+        <button [disabled]="submitted || !form.valid" (click)="onSubmit()" type="button" class="btn btn-primary">Chia sẻ
         </button>
       </div>
     </form>

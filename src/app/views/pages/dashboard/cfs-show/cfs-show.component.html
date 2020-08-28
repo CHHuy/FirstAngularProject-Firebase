@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse navbar-custom" id="navbarNav">
       <ul>
         <li>
-          <a routerLink="cfs-show" class="btn btn-hidden">Tâm sự cùng nhau</a>
+          <a routerLink="dashboard" class="btn btn-danger">Gửi tâm sự</a>
         </li>
       </ul>
     </div>
@@ -22,24 +22,28 @@
   </div>
   <div class="cfs-reading mr-auto ml-auto">
     <div class="row">
-      <div class="cfs-posted col-md-6">
+      <div class="cfs-posted col-md-5">
         <div class="list-group">
-          <a *ngFor="let message of messages | async" (click)="onShowMessageDetail(message)" href="#"
-             class="list-group-item list-group-item-action"
-             [ngClass]="{'active': currentMessage?.id == message.id}"
-          >
-            {{ message.content }}
-          </a>
+          <div *ngFor="let message of messages | async">
+            <a *ngIf="message.status" (click)="onShowMessageDetail(message)" href="#"
+               class="list-group-item list-group-item-action"
+               [ngClass]="{'active': currentMessage?.id == message.id}"
+            >
+              {{ message.content }}
+            </a>
+          </div>
         </div>
       </div>
-      <div *ngIf="currentMessage" class="cfs-answered col-md-6">
-        <h4>{{ currentMessage.content }}</h4>
+      <div *ngIf="currentMessage" class="cfs-answered col-md-7">
+        <div class="message-bg">
+          <h4 class="message-header">{{ currentMessage.content }}</h4>
+        </div>
         <div class="somebody-comment">
           <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()"
                 [ngClass]="{'ng-was-validated-invalid': submitted}">
             <div class="form-group">
               <textarea autocomplete="off" [formControl]="comment" class="form-control" id="textarea"
-                        rows="7"></textarea>
+                        rows="4"></textarea>
               <small *ngIf="comment.invalid" class="invalid-feedback">
                 <span *ngIf="comment.errors['minlength']">{{ validationMessages.comment.minlength }}</span>
                 <span *ngIf="comment.errors['maxlength']">{{ validationMessages.comment.maxlength }}</span>
@@ -53,8 +57,8 @@
           </form>
         </div>
 
-        <ul *ngIf="currentMessage" class="list-unstyled">
-          <li *ngFor="let item of currentComments | async" class="media">
+        <ul *ngIf="currentMessage" class="list-unstyled list-group">
+          <li *ngFor="let item of currentComments | async" class="media list-group-item list-group-item-action">
             <div class="media-body">
               {{ item.comment }}
             </div>

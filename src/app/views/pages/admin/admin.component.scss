@@ -5,7 +5,7 @@
     border-radius: 8px;
 
     img {
-      height: 35px;
+      height: 50px;
     }
   }
 
@@ -14,10 +14,31 @@
 
   .navbar-custom {
     @include justify-content(flex-end);
+
+    ul {
+      list-style: none;
+      margin-bottom: 0;
+      @include flexbox();
+
+      li {
+        &:first-child {
+          margin-right: 10px;
+        }
+
+        a {
+          font-weight: bold;
+          font-size: 13px;
+        }
+      }
+    }
   }
 }
 
 .admin-body {
+  .admin-approve{
+    height: 400px;
+    overflow-y: scroll;
+  }
   .admin-logo {
     text-align: center;
     margin: 15px 0;
@@ -37,18 +58,20 @@
   }
 
   .admin-post-check {
-    .form-group-content{
+    .form-group-content {
       height: 400px;
       overflow-y: scroll;
     }
+
     color: #000000;
     font-weight: bold;
     font-size: 14px;
     @include media-breakpoint-up(lg) {
       width: 50%;
     }
-    .list-group{
-      .list-group-item{
+
+    .list-group {
+      .list-group-item {
         padding: 15px 10px;
       }
     }
@@ -66,3 +89,4 @@
     border-color: #fff;
   }
 }
+
