@@ -4,28 +4,21 @@
       <img src="assets/images/MOLI-GROUP_Red-1.png" alt="">
     </a>
     <a routerLink="cfs-show" class="btn btn-danger">Tâm sự cùng nhau</a>
-    <!--<button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse navbar-custom" id="navbarNav">
-      <ul class="navbar-nav">
-          <li class="nav-item">
-            <a routerLink="cfs-show" class="btn btn-danger">Tâm sự cùng nhau</a>
-          </li>
-      </ul>
-    </div>-->
   </nav>
 </div>
 <div class="dashboard-body">
   <div class="dashboard-logo">
-<!--    <img src="assets/images/MOLI-GROUP_Red-1.png" alt="">-->
+    <!--    <img src="assets/images/MOLI-GROUP_Red-1.png" alt="">-->
     <img src="assets/images/giphy.gif" alt="">
   </div>
   <div class="dashboard-textbox mr-auto ml-auto">
     <form *ngIf="!submitted" [formGroup]="form" novalidate (ngSubmit)="onSubmit()"
           [ngClass]="{'ng-was-validated-invalid': submitted}">
       <div class="form-group">
-        <label for="textarea">Tâm tư của bạn?</label>
+        <label for="textarea">Bạn có điều muốn nói? có những tâm sự muốn được chia sẻ nhưng không biết tỏ cùng ai? những
+          thắc mắc trong cuộc sống nhưng không có lời giải đáp?
+          <br>Hãy tâm sự cùng nhau, nơi mọi chia sẻ đều là ẩn
+          danh và thật lòng nhất!</label>
         <textarea autocomplete="off" [formControl]="message" class="form-control" id="textarea" rows="7"></textarea>
         <small *ngIf="message.invalid" class="invalid-feedback">
           <span *ngIf="message.errors['required']">{{ validationMessages.message.required }}</span>
