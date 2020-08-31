@@ -12,7 +12,7 @@ import { map, take } from 'rxjs/operators';
 export class AdminComponent implements OnInit {
   messages;
   checked: boolean;
-
+  isMenuCollapsed = true;
   constructor(private fb: FormBuilder,
               private afs: AngularFirestore) {
   }
