@@ -1,17 +1,19 @@
 <div class="dashboard-header">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a routerLink="dashboard">
+    <a class="mr-auto" routerLink="dashboard">
       <img src="assets/images/MOLI-GROUP_Red-1.png" alt="">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a routerLink="cfs-show" class="btn btn-danger">Tâm sự cùng nhau</a>
+    <!--<button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse navbar-custom" id="navbarNav">
-      <ul>
-          <li><a routerLink="cfs-show" class="btn btn-danger">Tâm sự cùng nhau</a></li>
+    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse navbar-custom" id="navbarNav">
+      <ul class="navbar-nav">
+          <li class="nav-item">
+            <a routerLink="cfs-show" class="btn btn-danger">Tâm sự cùng nhau</a>
+          </li>
       </ul>
-    </div>
+    </div>-->
   </nav>
 </div>
 <div class="dashboard-body">

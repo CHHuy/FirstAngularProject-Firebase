@@ -5,6 +5,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { SharedAppModule } from '../../../shared/shared.module';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     CommonModule,
     AdminRoutingModule,
     SharedAppModule,
-    InputSwitchModule
+    InputSwitchModule,
+    NgbCollapseModule
   ]
 })
 export class AdminModule { }

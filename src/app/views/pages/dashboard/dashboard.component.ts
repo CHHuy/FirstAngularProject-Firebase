@@ -10,6 +10,8 @@ import { MessageService } from 'primeng/api';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  isMenuCollapsed = true;
+
   submitted: boolean;
   form: FormGroup;
   message: AbstractControl;

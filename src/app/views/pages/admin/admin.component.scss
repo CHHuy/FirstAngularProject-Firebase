@@ -19,10 +19,18 @@
       list-style: none;
       margin-bottom: 0;
       @include flexbox();
-
+      @include media-breakpoint-down(md){
+        li{
+          padding-top: 5px;
+          margin-left: auto;
+        }
+      }
       li {
         &:first-child {
           margin-right: 10px;
+          @include media-breakpoint-down(md     ){
+            margin-right: 0;
+          }
         }
 
         a {
